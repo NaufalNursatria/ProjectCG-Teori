@@ -41,6 +41,31 @@ var doInit = () => {
     renderer.shadowMap.enabled=true
     renderer.setClearColor(0x303030)
 
+    // const loader = new THREE.TextureLoader();
+    // scene.add(
+    //     new THREE.Mesh(
+    //         new THREE.BoxGeometry(500, 500, 500),
+    //         [
+    //             new THREE.MeshPhongMaterial({map: loader.load('./texture/skybox/skyrender0001.jpg'), side: THREE.DoubleSide}),
+    //             new THREE.MeshPhongMaterial({map: loader.load('./texture/skybox/skyrender0002.jpg'), side: THREE.DoubleSide}),
+    //             new THREE.MeshPhongMaterial({map: loader.load('./texture/skybox/skyrender0003.jpg'), side: THREE.DoubleSide}),
+    //             new THREE.MeshPhongMaterial({map: loader.load('./texture/skybox/skyrender0004.jpg'), side: THREE.DoubleSide}),
+    //             new THREE.MeshPhongMaterial({map: loader.load('./texture/skybox/skyrender0005.jpg'), side: THREE.DoubleSide}),
+    //             new THREE.MeshPhongMaterial({map: loader.load('./texture/skybox/skyrender0006.jpg'), side: THREE.DoubleSide}),
+    //         ]
+    //     )
+    // )
+
+    scene.background = new THREE.CubeTextureLoader().load( [
+        'texture/skybox/corona_ft.png',
+        'texture/skybox/corona_bk.png',
+        'texture/skybox/corona_up.png',
+        'texture/skybox/corona_dn.png',
+        'texture/skybox/corona_rt.png',
+        'texture/skybox/corona_lf.png',
+    ] )
+
+
     //Texture
     const bowlTex = new THREE.TextureLoader().load('./texture/ball.jpg'); //Bowling ball Texture
     const laneTex = new THREE.TextureLoader().load('./texture/lane.jpg'); //Lane Texture
@@ -51,7 +76,7 @@ var doInit = () => {
     var planeMat = new THREE.MeshStandardMaterial( { map : laneTex} );
     planeMesh = new THREE.Mesh(planeGeo, planeMat);
     planeMesh.receiveShadow=true;
-    planeMesh.castShadow=false;
+    planeMesh.castShadow=true;
     planeMesh.position.z = -20;
     scene.add(planeMesh);
 
@@ -61,6 +86,7 @@ var doInit = () => {
     boxMesh = new THREE.Mesh(boxGeo, boxMat);
     boxMesh.position.set(0,-1.2,2);
     boxMesh.position.z = -20;
+    boxMesh.receiveShadow=true;
     scene.add(boxMesh);
 
     //Bowling Ball
@@ -120,6 +146,7 @@ var doInit = () => {
 //Move the ball using value from HTML slider
 function moveBall(e){
     var target = (e.target) ? e.target : e.srcElement;
+    console.log("m: " + target.value)
     bowlMesh.position.z = -target.value;
     bowlMesh.rotation.z += -target.value;
 }
@@ -127,6 +154,7 @@ function moveBall(e){
 //Scale the ball using value from HTML slider2
 function scaleBall(e){
     var target = (e.target) ? e.target : e.srcElement;
+    console.log(target.value)
     bowlMesh.scale.x = target.value;
     bowlMesh.scale.y = target.value;
     bowlMesh.scale.z = target.value;
@@ -143,6 +171,7 @@ let addListener = () =>{
 
 //Resetting the scene by reinstantiate the object to original position
 function resetScene(e){
+    console.log("test")
     scene.add(pinMesh)
     scene.add(pinHeadMesh);
     bowlMesh.position.z = 3;
@@ -165,7 +194,9 @@ function doRender(){
         {
             animation = false;
             scene.remove(pinMesh);
+            pinHeadMesh.position.lerp(new THREE.Vector3(0, 1.2, -55), alpha)
             scene.remove(pinHeadMesh);
+            scene.remove(pinMesh);
         }
     }
 }
@@ -206,6 +237,7 @@ const onClickFunc = (event) =>
             const element = interact[index];
             if(element.object.name == "bowlingball")
             {
+                console.log("hello")
                 animation = true;
             }
         }    
