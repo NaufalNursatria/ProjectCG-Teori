@@ -1,1 +1,3 @@
-https://github.com/Nexilios/ProjectCG-Teori
+https://github.com/Nexilios/ProjectCG-Teori (Website)
+
+https://github.com/Nexilios/ProjectCG-Teori/releases/tag/v1.1 (Download)
