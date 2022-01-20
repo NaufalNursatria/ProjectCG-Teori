@@ -11,7 +11,7 @@ https://youtu.be/LJEEAc22-w4
 https://www.instagram.com/tv/CY7s6rbJoP1/?utm_medium=copy_link
 
 // Download
-https://github.com/Nexilios/ProjectCG-Teori/releases/tag/v1.1 
+https://github.com/Nexilios/ProjectCG-Teori/releases/tag/v1.3 
 
 // Instruksi Menjalankan Project
 1) Install Visual Studio Code dari https://code.visualstudio.com/
