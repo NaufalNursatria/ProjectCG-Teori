@@ -15,6 +15,6 @@
 7) Setelah project berhasil terbuka pada Visual Studio Code, klik index.html dari Visual Studio Code 
 8) Setelah index.html terbuka di Visual Studio Code, klik kanan pada isi index.html atau pada file index.html dan pilih 'Open with Live Server'
 
-**Extra Links:*8
+**Extra Links:**
   * Youtube : https://youtu.be/LJEEAc22-w4
   * Instagram: https://www.instagram.com/tv/CY7s6rbJoP1/?utm_medium=copy_link
