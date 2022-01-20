@@ -5,7 +5,7 @@
  * Nicholas Reynaldo                        - 2301847404 
 
 
-*Instruksi Menjalankan Project*
+**Instruksi Menjalankan Project**
 1) Install Visual Studio Code dari https://code.visualstudio.com/
 2) Setelah Visual Studio Code terbuka, tekan Ctrl + Shift + X untuk membuka Extensions Marketplace
 3) Kemudian search 'Live Server' pada searchbar diatas kiri dan install Live Server yang dibuat oleh Ritwick Dey
@@ -15,6 +15,6 @@
 7) Setelah project berhasil terbuka pada Visual Studio Code, klik index.html dari Visual Studio Code 
 8) Setelah index.html terbuka di Visual Studio Code, klik kanan pada isi index.html atau pada file index.html dan pilih 'Open with Live Server'
 
-*Extra Links:*
+**Extra Links:*8
   * Youtube : https://youtu.be/LJEEAc22-w4
   * Instagram: https://www.instagram.com/tv/CY7s6rbJoP1/?utm_medium=copy_link
